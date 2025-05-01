@@ -55,6 +55,10 @@ class Record(models.Model):
     kutubxonachi =models.ForeignKey(Kutubxonachi, on_delete=models.SET_NULL, null=True)
     olingan_sana = models.DateField(auto_now_add=True)
     qaytarga_sana = models.DateField(blank=True, null=True)
+
+    class Meta:
+         verbose_name_plural="Recordlar"
+
     def __str__(self):
         if self.talaba:
             return f"{self.talaba}: {self.kitob.nom}"
